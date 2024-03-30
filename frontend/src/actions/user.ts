@@ -11,10 +11,15 @@ const tag_revalidation = "users";
 
 export async function getUsers() {
   const url = `${process.env.BASE_URL}/user/`;
+  throw new Error(
+    "Un problème s'est produit lors de la recherche des utilisateurs"
+  );
   const res = await fetch(url, { next: { tags: [tag_revalidation] } });
   if (!res.ok) {
     console.error({ ERROR: res });
-    throw new Error("Um! Une erreur s'est produite");
+    throw new Error(
+      "Un problème s'est produit lors de la recherche des utilisateurs"
+    );
   }
   const users: TUser[] = await res.json();
   return users;
