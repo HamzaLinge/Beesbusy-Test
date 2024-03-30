@@ -1,5 +1,5 @@
 import { getUserById } from "@/actions/user";
-import FormUser from "@/components/form-user";
+import FormUser from "@/components/user-form";
 
 import {
   Breadcrumb,

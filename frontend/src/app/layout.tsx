@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Beesbusy Test",
-  description: "Une petite application de gestion des utilisateur",
+  description: "Une petite application de gestion des utilisateurs",
 };
 
 export default function RootLayout({
@@ -17,8 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
-      <Toaster richColors />
+      <body className={inter.className}>
+        {children}
+        <Toaster richColors />
+      </body>
     </html>
   );
 }

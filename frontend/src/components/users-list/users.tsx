@@ -1,8 +1,9 @@
-import { DataTable } from "@/components/users/data-table";
+import { DataTable } from "@/components/users-list/data-table";
 import { columns } from "./columns";
 import { getUsers } from "@/actions/user";
 
 async function Users() {
+  // await new Promise((resolve) => setTimeout(resolve, 3000));
   const users = await getUsers();
 
   return (

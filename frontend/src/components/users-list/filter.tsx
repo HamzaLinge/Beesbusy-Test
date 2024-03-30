@@ -46,7 +46,7 @@ export function Filter({
       type="text"
       value={(columnFilterValue ?? "") as string}
       onChange={(e) => column.setFilterValue(e.target.value)}
-      placeholder={`Search...`}
+      placeholder={`Chercher...`}
       className="w-36 border shadow rounded"
     />
   );

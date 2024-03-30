@@ -6,7 +6,10 @@ function DevSection() {
 
   return (
     <div className="space-y-2 text-sm">
-      <p>Ces deux boutons peuvent être utilisés pour tester l'application:</p>
+      <p>
+        Ces deux boutons peuvent être utilisés pour aider au test de
+        l'application:
+      </p>
       <div className="flex flex-col gap-y-2">
         <CreateFakeUsersButton />
         <DeleteAllUsers />

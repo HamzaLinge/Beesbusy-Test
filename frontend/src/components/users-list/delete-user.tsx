@@ -1,5 +1,4 @@
 import {
-  AlertDialog,
   AlertDialogAction,
   AlertDialogCancel,
   AlertDialogContent,
@@ -7,15 +6,15 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-  AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 
-import { TUser } from "@/types/user";
-import { useState, useTransition } from "react";
-import { Button } from "@/components/ui/button";
 import { deleteUserById } from "@/actions/user";
-import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { TUser } from "@/types/user";
 import { ReloadIcon } from "@radix-ui/react-icons";
+import { useTransition } from "react";
+import { toast } from "sonner";
+import { capitalize } from "@/utils/helpers";
 
 type DeleteUserProps = {
   user: TUser;
@@ -24,13 +23,12 @@ type DeleteUserProps = {
 function DeleteUser({ user, callback }: DeleteUserProps) {
   const [isPending, startTransition] = useTransition();
 
-  const [open, setOpen] = useState(false);
   const handleDeleteUser = () => {
     startTransition(async () => {
       deleteUserById(user.id).then((err) =>
         !err
           ? toast.success("Suppression réussie", {
-              description: `${user.prenom} ${user.nom} a bien été supprimé.`,
+              description: `${capitalize(user.prenom)} ${capitalize(user.nom)} a bien été supprimé.`,
             })
           : toast.error("Suppression échouée", {
               description: `${err.message}.`,
@@ -42,7 +40,7 @@ function DeleteUser({ user, callback }: DeleteUserProps) {
   return (
     <AlertDialogContent>
       <AlertDialogHeader>
-        <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+        <AlertDialogTitle>Certain?</AlertDialogTitle>
         <AlertDialogDescription>
           Vous vous apprêtez à supprimer{" "}
           <span className="font-semibold capitalize">

@@ -12,7 +12,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { DotsHorizontalIcon } from "@radix-ui/react-icons";
-import DeleteUser from "@/components/users/delete-user";
+import DeleteUser from "@/components/users-list/delete-user";
 import Link from "next/link";
 import { useState } from "react";
 

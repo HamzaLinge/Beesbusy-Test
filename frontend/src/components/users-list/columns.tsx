@@ -4,7 +4,7 @@ import { TUser } from "@/types/user";
 
 import { ColumnDef } from "@tanstack/react-table";
 
-import DataTableColumnHeader from "@/components/users/data-table-column-header";
+import DataTableColumnHeader from "@/components/users-list/data-table-column-header";
 import ActionsUser from "./actions-user";
 
 export const columns: ColumnDef<TUser>[] = [

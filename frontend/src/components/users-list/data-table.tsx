@@ -21,8 +21,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import DataTablePagination from "@/components/users/data-table-pagination";
-import DataTableViewOptions from "@/components/users/data-table-view-options";
+import DataTablePagination from "@/components/users-list/data-table-pagination";
+import DataTableViewOptions from "@/components/users-list/data-table-view-options";
 import { useState } from "react";
 import { Filter } from "./filter";
 
@@ -105,7 +105,7 @@ export function DataTable<TData, TValue>({
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
-                  No results.
+                  Aucun Résultat.
                 </TableCell>
               </TableRow>
             )}

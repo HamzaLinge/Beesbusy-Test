@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { PlusIcon } from "@radix-ui/react-icons";
-import CreateFakeUsersButton from "@/components/dev/create-fake-users-btn";
-import DeleteAllUsers from "@/components/dev/delete-all-users";
-import Users from "@/components/users/users";
 import DevSection from "@/components/dev";
+import SkeletonUsers from "@/components/skeleton-users";
+import { Button } from "@/components/ui/button";
+import Users from "@/components/users-list/users";
+import { PlusIcon } from "@radix-ui/react-icons";
+import Link from "next/link";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
@@ -20,8 +20,9 @@ export default function Home() {
             <span>Créer un Nouvel Utilisateur</span>
           </Button>
         </Link>
-
-        <Users />
+        <Suspense fallback={<SkeletonUsers />}>
+          <Users />
+        </Suspense>
       </div>
     </main>
   );

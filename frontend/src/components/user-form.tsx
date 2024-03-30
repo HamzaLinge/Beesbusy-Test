@@ -39,7 +39,14 @@ export default function FormUser({ user }: FormUserProps) {
 
   const form = useForm<z.infer<typeof UserSchema>>({
     resolver: zodResolver(UserSchema),
-    defaultValues: user ? user : {},
+    defaultValues: user
+      ? user
+      : {
+          prenom: "",
+          nom: "",
+          age: 0,
+          ville: "",
+        },
   });
 
   async function onSubmit(inputs: z.infer<typeof UserSchema>) {
