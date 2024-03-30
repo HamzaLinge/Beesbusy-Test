@@ -7,7 +7,7 @@ Une petite application pour la gestion des utilisateurs, faisant office d'un tes
 - Python 3.x
 - Django 5.x
 - Node.js 20.x
-- npm ou yarn
+- yarn
 
 ## Installation
 
@@ -29,8 +29,8 @@ python manage.py runserver
 
 ```bash
 cd Beesbusy-Test/frontend
-npm install (yarn install)
-yarn dev (npm run dev)
+yarn instal
+yarn dev
 ```
 
 3. Lancer l'application :
